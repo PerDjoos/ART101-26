@@ -1,0 +1,12 @@
+p  {color: blueviolet; font-size: small; background: whitesmoke;}
+h1 {color: hotpink; font-size: xx-large; background-color: black;}
+h2 {color: plum; font-size: x-large; background-color: lightskyblue;}
+ol {color: blue; font-size: medium;}
+
+li {text-align: center;}
+
+ol {background-color: thistle;}
+
+img {width: 50%; display: block; margin: 0 auto; background-color: thistle;}
+
+html {font-family: 'Bitcount Grid Double'; background-color: gray;}
