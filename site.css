@@ -1,3 +1,46 @@
-body {background: #e1f3f1; padding: 50px} 
-h1, h2, h3 {color: #1d1184; font-family: sans-serif}
+body {background: #d7b4f9; padding: 50px} 
+h1, h2, h3 {color: #5e1184; font-family: sans-serif}
 img {width: 200px}
+#page {
+    max-width: 900px;
+    margin: 0 auto 0 auto;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+}
+.top-section {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin: 0 0 25px 0;
+}
+#introduction{
+    padding: 20px;
+    flex: 2;
+}
+#introduction h2 {
+    font-size: 120%;
+    color: #8a3ab2;
+    font-style: italic;
+}
+.profile{
+    text-align: center;
+    flex: 1;
+}
+.profile img{
+    width: 200px;
+    border-radius: 12px;
+}
+.navigation{
+    background: #d7b4f9;
+    padding: 10px;
+}
+.navigation h2 {
+    color: white;
+}
+.navigation ol {
+    color: white;
+}
+.navigation a {
+    color: white;
+    font-weight: bold;
+}
