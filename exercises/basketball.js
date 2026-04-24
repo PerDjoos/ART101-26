@@ -10,7 +10,9 @@ const teams = {
         stats: {
             wins: 0,
             losses: 0,
-            totalPoints: 0,
+            totalSeasonPoints: 0,
+            totalSeasonPointsAllowed: 0,
+            gamesPlayed: 0
         },
     },
     LA: {
@@ -24,9 +26,15 @@ const teams = {
         stats: {
             wins: 0,
             losses: 0,
-            totalPoints: 0,
+            totalSeasonPoints: 0,
+            totalSeasonPointsAllowed: 0,
+            gamesPlayed: 0
         }
     }
+}
+
+const seasons = {
+    currentDay: 0,
 }
 
 function CalculateScores(homeTeam, awayTeam) {
@@ -56,6 +64,10 @@ function simulateGame(homeTeam, awayTeam) {
         homeTeam.stats.losses += 1;
         awayTeam.stats.wins += 1;
     }
+    homeTeam.stats.totalSeasonPoints += scores.homeScore
+    awayTeam.stats.totalSeasonPoints += scores.awayScore
+    homeTeam.stats.gamesPlayed += 1
+    awayTeam.stats.gamesPlayed += 1
     return {
     homeTeam : homeTeam,
     awayTeam : awayTeam,
@@ -70,11 +82,15 @@ function randomBetween(min, max) {
 }
 
 document.getElementById("playBtn").addEventListener("click", () => {
-  const result = simulateGame(teams.SF, teams.LA);
-
-  document.getElementById("output").innerHTML = `
-    Winner: ${result.winner} <br>
-    ${result.homeTeam.attributes.name} (${result.homeTeam.stats.wins} - ${result.homeTeam.stats.losses}): ${result.homeScore} <br>
-    ${result.awayTeam.attributes.name} (${result.awayTeam.stats.wins} - ${result.awayTeam.stats.losses}): ${result.awayScore} <br>
-  `;
+    seasons.currentDay += 1    
+    document.querySelector(".seasons").textContent = `day: ${seasons.currentDay}`;
+    
+    const result = simulateGame(teams.SF, teams.LA);
+  document.getElementById("output").innerHTML = `<div id="ui">
+  <div class="team">${result.homeTeam.attributes.name} (${result.homeTeam.stats.wins} - ${result.homeTeam.stats.losses}): ${result.homeScore} <br>
+  avg points: ${Math.round(result.homeTeam.stats.totalSeasonPoints / result.homeTeam.stats.gamesPlayed)} </div><br>
+  <div id="game-results">Winner: ${result.winner} </div><br>
+    <div class="team">${result.awayTeam.attributes.name} (${result.awayTeam.stats.wins} - ${result.awayTeam.stats.losses}): ${result.awayScore} <br>
+    avg points: ${Math.round(result.awayTeam.stats.totalSeasonPoints / result.awayTeam.stats.gamesPlayed)} </div><br>
+  </div>`;
 });
