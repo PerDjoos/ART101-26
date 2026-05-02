@@ -1,3 +1,13 @@
-#ui {display: flex; flex-direction: row; justify-content: space-evenly;}
-h1 {display: flex; flex-direction: row; justify-content: center;}
-.seasons {display: flex;}
+body {display: flex; background: darkblue; padding: 25px} 
+#ui {display: flex; flex-direction: row; justify-content: space-between;}
+h1 {display: flex; flex-direction: row; justify-content: center; background-color: rgb(255, 255, 24);}
+.seasons {background-color: darkblue; color: white; text-align: center;}
+#page {max-width: 900px;
+    margin: 0 auto 0 auto;
+    background: rgb(255, 255, 255);
+    padding: 30px;
+    text-align: center;}
+#playBtn {display: block; margin: 0 auto; width: 75%; border: none; background-color: yellow; color: darkblue;}
+#game-results h1 {background-color: rgb(255, 187, 0); flex: 2}
+.team p {background-color: lightgrey;}
+.team h2 {background-color: orange;}
