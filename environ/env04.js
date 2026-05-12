@@ -15,7 +15,7 @@ colors.set(3, "green");
 colors.set(4, "blue");
 colors.set(5, "purple");
 
-let count = 0
+let count = -1
 
 $("#name").click(function() {
     $("#output-text").html(mainCharacter.name)
@@ -41,4 +41,10 @@ $("#color").click(function() {
 
 $("#iri").click(function() {
     $("#output-text").html("you know it")
+    let man1 = document.getElementById("man1")
+    let man2 = document.getElementById("man2")
+
+    let temp = man1.src
+    man1.src = man2.src
+    man2.src = temp
 })
