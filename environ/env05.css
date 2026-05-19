@@ -1,0 +1,23 @@
+body {background-image: url(gradient1.jpg); background-position: top-center; background-repeat: repeat-y; background-size: 100%}
+h1 {color: white}
+#main {display: flex; width: 100%; gap: 1%}
+#main img {width: 50%;}
+#top img {width: 50%;}
+#top #flipped {width: 50%; transform: scaleX(-1)}
+#top h2 {color: white; text-align: center}
+.environment-output {display: flex; width: 100%; padding-top: 10px;}
+.environment-output button {flex: 1;}
+#output-text {text-align: center; font-size: large;}
+.red {color: red}
+.orange {color: orange}
+.yellow {color: yellow}
+.green {color: green}
+.blue {color: blue}
+.purple {color: purple}
+#gman1 {flex: 1; background: none; border: none; padding: 0; cursor: pointer; outline: none;}
+#gman2 {flex: 1; background: none; border: none; padding: 0; cursor: pointer; outline: none;}
+.opaqued {opacity: 0.5;}
+#gman img {width: 100%; height: auto; display: block}
+
+#thought1 {position: absolute; transform: translateX(50%); background: white;border: 2px solid black;border-radius: 20px;padding: 12px;width: 180px;z-index: 3;pointer-events: none;}
+#thought2 {position: absolute; transform: translateX(175%); background: white;border: 2px solid black;border-radius: 20px;padding: 12px;width: 180px;z-index: 3;pointer-events: none;}
